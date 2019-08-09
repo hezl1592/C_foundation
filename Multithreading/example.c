@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <pthread.h>
 #include <unistd.h>
+#include <string.h>
 
 void* myfunc(void* args);
 void printids(char *s);
@@ -13,7 +14,7 @@ int main()
 	printids("main thread:");
 	pthread_create(&th, NULL, myfunc, "new thread:");
 	pthread_join(th, NULL);
-	
+
 	printf("main thread over.\n");
 	return 0;
 }
