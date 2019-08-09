@@ -29,6 +29,14 @@ int main(int argc, char **argv)
 	pthread_join(tidB, NULL);
 	printf("counter: %d\n", counter);
 
+	if(pthread_mutex_destroy(&mutex) == 0)
+	{
+		printf("互斥锁销毁成功!\n");
+	}
+	else
+	{
+		printf("互斥锁销毁失败!\n");
+	}
 	return 0;
 }
 
